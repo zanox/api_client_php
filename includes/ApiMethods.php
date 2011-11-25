@@ -553,7 +553,7 @@ abstract class ApiMethods
 
         if ( is_array($parameter) )
         {
-            $query = http_build_query($parameter);
+            $query = http_build_query($parameter, '', '&');
 
             if ( strlen($query) > 0 )
             {
