@@ -2,6 +2,7 @@
 
 require_once DIR . '/version/2011-03-01/model/IMethods.php';
 require_once DIR . '/includes/ApiMethods.php';
+require_once DIR . '/includes/ApiConstSoap.php';
 
 /**
  * Soap Api Methods
