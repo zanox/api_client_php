@@ -59,7 +59,7 @@ define("SSL_PREFIX",                    "ssl://");
 define("HTTP_PORT",                     80);
 define("HTTPS_PORT",                    443);
 define("HOST",                          "api.zanox.com");
-define("OAUTH_HOST",                    "auth.zanox-affiliate.de");
+define("OAUTH_HOST",                    "auth.zanox.com");
 define("URI_WSDL",                      "/wsdl");
 define("URI_SOAP",                      "/soap");
 define("URI_XML",                       "/xml");
