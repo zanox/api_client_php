@@ -126,7 +126,7 @@ class RestfulMethods extends ApiMethods implements IMethods
      * @return     object or string            list of products or false
      */
     public function searchProducts ( $query, $searchType = 'phrase',
-        $region = NULL, $categoryId = NULL, $programId = array(),
+        $region = NULL, $categoryId = NULL, $programs = array(),
         $hasImages = true, $minPrice = 0, $maxPrice = NULL, $adspaceId = NULL,
         $page = 0, $items = 10 )
     {
@@ -136,7 +136,7 @@ class RestfulMethods extends ApiMethods implements IMethods
         $parameter['searchType'] = $searchType;
         $parameter['region']     = $region;
         $parameter['category']   = $categoryId;
-        $parameter['programId']  = implode(",", $programId);
+        $parameter['programs']  = implode(",", $programs);
         $parameter['hasImages']  = $hasImages;
         $parameter['minPrice']   = $minPrice;
         $parameter['maxPrice']   = $maxPrice;
