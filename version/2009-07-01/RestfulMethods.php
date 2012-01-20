@@ -165,7 +165,7 @@ class RestfulMethods extends ApiMethods implements IMethods
         $parameter['ip']         = $ip;
         $parameter['region']     = $region;
         $parameter['category']   = $categoryId;
-        $parameter['programId']  = implode(",", $programId);
+        $parameter['programs']  = implode(",", $programId);
         $parameter['hasImages']  = $hasImages;
         $parameter['minPrice']   = $minPrice;
         $parameter['maxPrice']   = $maxPrice;
