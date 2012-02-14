@@ -2218,7 +2218,7 @@ class SoapMethods extends ApiMethods implements IMethods
      * @access     public
      * @category   signature
      *
-     * @return     bool                        returns true on success
+     * @return     string                        URL to the UI
      */
     public function getUiUrl ( $connectId, $sessionKey )
     {
@@ -2233,7 +2233,7 @@ class SoapMethods extends ApiMethods implements IMethods
 
         if ( $result )
         {
-            return true;
+            return $result->url;
         }
 
         return false;
