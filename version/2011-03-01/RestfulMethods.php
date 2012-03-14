@@ -2415,6 +2415,45 @@ class RestfulMethods extends ApiMethods implements IMethods
         throw new ApiClientException("Restful API Interface doesn't
             support getUiUrl()! Please use the SOAP Interface.");
     }
+
+
+    /**
+     * Get tracking categories for ad space; if not program member, returns program's default categories
+     * NOTE: not yet implemented with REST protocol!!!!
+     *
+     * @param      int         $adspaceId      adspace id (mandatory)
+     * @param      int         $programId      advertiser program id (mandatory)     
+     * @param      int         $page           result set page (optional)
+     * @param      int         $items          items per page (optional)
+     *
+     * @access     public
+     * @category   signature
+     *
+     * @return     object or string            program result set of trackingCategoryItems
+     */
+    public function getTrackingCategories ( $adspaceId, $programId, $page = 0, $items = 50 )
+    {
+        /*
+        $resource = array('trackingcategories');
+
+        $parameter['adspaceId']    = $adspaceId;
+        $parameter['programId']    = $programId;
+        $parameter['page']         = $page;
+        $parameter['items']        = $items;
+
+        $this->setRestfulAction(GET);
+        $this->setSecureApiCall(true);
+
+        $result = $this->doRestfulRequest($resource, $parameter);
+
+        if ( $result )
+        {
+            return $result;
+        }
+			*/
+        return false;
+    }
+
 }
 
 ?>
