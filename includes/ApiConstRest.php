@@ -75,9 +75,9 @@
 /**
  * reviewStateEnum
  */
-		define('CONFIRMED', 'CONFIRMED');
-		define('OPEN', 'OPEN');
-		define('REJECTED', 'REJECTED');
+		#define('CONFIRMED', 'CONFIRMED');
+		#define('OPEN', 'OPEN');
+		#define('REJECTED', 'REJECTED');
 		define('APPROVED', 'APPROVED');
 
 /**
@@ -160,15 +160,15 @@
  * connectStatusTypeEnum
  */
 
-		define('ACTIVE', 'ACTIVE');
-		define('INACTIVE', 'INACTIVE');
+		#define('ACTIVE', 'ACTIVE');
+		#define('INACTIVE', 'INACTIVE');
 		
 
 /**
  * mediaSlotStatusEnum
  */
-		define('ACTIVE', 'ACTIVE');
-		define('DELETED', 'DELETED');
+		#define('ACTIVE', 'ACTIVE');
+		#define('DELETED', 'DELETED');
 
 /**
  * transactionTypeEnum
