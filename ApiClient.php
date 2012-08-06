@@ -25,7 +25,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_2011_03_01);
+ *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_DEFAULT);
  *
  *      $connectId = '__your_connect_id__';
  *      $secretKey = '__your_secrect_key__';
@@ -46,7 +46,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_2011_03_01);
+ *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_DEFAULT);
  *
  *      $connectId = '__your_connect_id__';
  *      $secretKey = '__your_secrect_key__';
@@ -67,7 +67,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
+ *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_DEFAULT);
  *
  *      $connectId = '__your_connect_id__';
  *      $secretKey = '__your_secrect_key__';
@@ -88,7 +88,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
+ *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_DEFAULT);
  *
  *      $api->setProxy("example.org", 8080, "login", "password");
  *
@@ -101,7 +101,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
+ *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_DEFAULT);
  *
  *      $api->setHttpProtocol(HTTPS);
  *
@@ -114,7 +114,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_2011_03_01);
+ *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_DEFAULT);
  *
  *      $xml = $api->getProduct('31f3bf210db1883e6bc3f7ab5dd096c7');
  *
@@ -184,11 +184,11 @@ final class ApiClient
      *
      * Usage example: creating api instance
      * <code>
-     *      // use soap api interface and version 2011-03-01
-     *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
+     *      // use soap api interface and the latest version
+     *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_DEFAULT);
      *
-     *      // use xml api interface and version 2011-03-01
-     *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_2011_03_01);
+     *      // use xml api interface and the latest vesion
+     *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_DEFAULT);
      *
      *      // use json api interface and latest version
      *      $api = ApiClient::factory(PROTOCOL_JSON);
