@@ -184,11 +184,11 @@ final class ApiClient
      *
      * Usage example: creating api instance
      * <code>
-     *      // use soap api interface and version 2009-07-01
-     *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2009_07_01);
+     *      // use soap api interface and version 2011-03-01
+     *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
      *
-     *      // use xml api interface and version 2009-07-01
-     *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_2009_07_01);
+     *      // use xml api interface and version 2011-03-01
+     *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_2011_03_01);
      *
      *      // use json api interface and latest version
      *      $api = ApiClient::factory(PROTOCOL_JSON);
