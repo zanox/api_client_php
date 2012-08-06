@@ -52,11 +52,11 @@ C)  Usage
           </code>
 
 
-       b) Instantiate API client with JSON as protocol and version 2011-03-01
+       b) Instantiate API client with JSON as protocol and default version 2011-03-01
 
           <code>
 
-              $api = ApiClient::factory(PROTOCOL_JSON, VERSION_2011_03_01);
+              $api = ApiClient::factory(PROTOCOL_JSON, VERSION_DEFAULT);
 
           </code>
 
@@ -108,7 +108,7 @@ D)  Usage examples:
 
        <code>
 
-            $api = ApiClient::factory(PROTOCOL_XML, VERSION_2011_03_01);
+            $api = ApiClient::factory(PROTOCOL_XML, VERSION_DEFAULT);
 
             $api->setConnectId($connectId);
             $api->setSecretKey($secretKey);
@@ -136,7 +136,7 @@ D)  Usage examples:
 
        <code>
 
-            $api = ApiClient::factory(PROTOCOL_XML, VERSION_2011_03_01);
+            $api = ApiClient::factory(PROTOCOL_XML, VERSION_DEFAULT);
 
             $api->setConnectId($connectId);
             $api->setSecretKey($secretKey);
