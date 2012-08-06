@@ -37,7 +37,7 @@ C)  Usage
     2) Instantiate a API client object
 
        The client can be invoked with three different protocols (XML, JSON SOAP)
-       and three different version (2009-07-01, 2011-03-01). The
+       and two different version (2009-07-01, 2011-03-01). The
        default protocol is XML and the default version is 2011-03-01 if no
        parameter are given.
 
