@@ -25,7 +25,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_2009_07_01);
+ *      $api = ApiClient::factory(PROTOCOL_XML, VERSION_2011_03_01);
  *
  *      $connectId = '__your_connect_id__';
  *      $secretKey = '__your_secrect_key__';
@@ -46,7 +46,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_2009_07_01);
+ *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_2011_03_01);
  *
  *      $connectId = '__your_connect_id__';
  *      $secretKey = '__your_secrect_key__';
@@ -67,7 +67,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2009_07_01);
+ *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
  *
  *      $connectId = '__your_connect_id__';
  *      $secretKey = '__your_secrect_key__';
@@ -88,7 +88,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2009_07_01);
+ *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
  *
  *      $api->setProxy("example.org", 8080, "login", "password");
  *
@@ -101,7 +101,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2009_07_01);
+ *      $api = ApiClient::factory(PROTOCOL_SOAP, VERSION_2011_03_01);
  *
  *      $api->setHttpProtocol(HTTPS);
  *
@@ -114,7 +114,7 @@ require_once 'includes/ApiError.php';
  *
  *      require_once 'client/ApiClient.php';
  *
- *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_2009_07_01);
+ *      $api = ApiClient::factory(PROTOCOL_JSON, VERSION_2011_03_01);
  *
  *      $xml = $api->getProduct('31f3bf210db1883e6bc3f7ab5dd096c7');
  *
@@ -133,7 +133,7 @@ require_once 'includes/ApiError.php';
  * @category    Web Services
  * @package     ApiClient
  * @version     2009-09-01
- * @copyright   Copyright � 2007-2009 zanox.de AG
+ * @copyright   Copyright 2007-2009 zanox.de AG
  *
  * @uses        PEAR Crypt_HMAC (required for PHP < 5.1.2)
  */
