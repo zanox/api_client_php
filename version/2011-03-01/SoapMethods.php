@@ -2179,6 +2179,32 @@ class SoapMethods extends ApiMethods implements IMethods
     }
 
 
+    /**
+     * Returns new offline user session
+     *
+     * @param      string      $authToken      authentication token
+     *
+     * @access     public
+     *
+     * @return     object                      user session
+     */
+    public function getOfflineSession ( $offlineToken )
+    {
+        $method = ucfirst(__FUNCTION__);
+
+        $parameter['offlineToken'] = $offlineToken;
+
+        $this->setSecureApiCall(true);
+
+        $result = $this->doSoapRequest(SERVICE_CONNECT, $method, $parameter);
+
+        if ( $result )
+        {
+            return $result->session;
+        }
+
+        return false;
+    }
 
     /**
      * Closes OAuth user session
