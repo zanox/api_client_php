@@ -175,6 +175,35 @@
 		define('LEADS', 'leads');
 		define('SALES', 'sales');
 
+/**
+ * jobTypeEnum
+ */
+    define('REPORT','report');
+    define('PRODUCT','product');
+    define('ADMEDIA','admedia');
+  
 
+/**
+ * groupByEnum
+ */
+    define('COUNTRY','country');
+    #define('CURRENCY','currency');
+    #define('ADMEDIUM','admedium');
+    #define('PROGRAM','program');
+    #define('ADSPACE','adspace');
+    #define('LINK_FORMAT','linkFormat');
+    #define('MONTH','month');
+    #define('DAY','day');
 
+/**
+ * reportTypeEnum
+ */
+    define('AGGREGATED','aggregated');
+    define('CLICK','click');
+    define('CLICKIN','clickin');
+    define('SALE','sale');
+    define('LEAD','lead');
+    define('VIEW','view');
+    define('POSTVIEW','postview');
+    
 ?>

@@ -2300,6 +2300,117 @@ class SoapMethods extends ApiMethods implements IMethods
     }
 
 
+    /**
+     * Create a report job with the asynchronous Data API
+     *
+     * @param string $reportType specifies kind or reportJob
+     * @param string $fromDate filter by date, lower range
+     * @param string $toDate filter by date, upper range
+     * @param string $dateType specifies meaning of fromDate and toDate.
+     * @param string $currency filter by the programs currency
+     * @param string $programId filter by the program
+     * @param string $adspaceId filter by the programs adspace
+     * @param string $admediumFormatId filter by AdmediumFormat
+     * @param string $groupBy group output by given fieldnames.
+     *
+     * @access     public
+     * @category   signature
+     *
+     * @return     object                      returns result set
+     */
+    public function CreateReportJob ($fromDate,$toDate,$dateType = null,$currency = null,$programId = null,$admediumId = null,$admediumFormatId = null,$adspaceId = null,$groupBy = null,$reportType = null,$notifyUrl = null)
+    {
+
+      $method = ucfirst(__FUNCTION__);
+
+      $parameter['currency']         = $currency;
+      $parameter['programId']        = $programId;
+      $parameter['admediumId']       = $admediumId;
+      $parameter['admediumFormatId'] = $admediumFormatId;
+      $parameter['adspaceId']        = $adspaceId;
+      $parameter['groupBy']          = $groupBy;
+      $parameter['fromDate']         = $fromDate;
+      $parameter['toDate']           = $toDate;
+      $parameter['dateType']         = $dateType;
+      $parameter['reportType']       = $reportType;
+      $parameter['notifyUrl']        = $notifyUrl;
+
+      $this->setSecureApiCall(true);
+
+      $result = $this->doSoapRequest(SERVICE_DATA, $method, $parameter);
+
+      if ( $result )
+      {
+          return $result;
+      }
+
+      return false;
+    }
+
+    /**
+     * Get a list of jobs
+     *
+     * @param string $type explanation
+     * @param string $status explanation
+     * @param string $createDate explanation
+     * @param string $page explanation
+     * @param string $items explanation
+     *
+     * @access     public
+     * @category   signature
+     *
+     * @return     object                      returns result set
+     */
+    public function GetJobs($type = null,$status = null,$createDate = null,$page = 0,$items = 10)
+    {
+        $method = ucfirst(__FUNCTION__);
+
+        $parameter['type'] = $type;
+        $parameter['status'] = $status;
+        $parameter['createDate'] = $createDate;
+        $parameter['page'] = $page;
+        $parameter['items'] = $items;
+
+        $this->setSecureApiCall(true);
+
+        $result = $this->doSoapRequest(SERVICE_DATA, $method, $parameter);
+
+        if ( $result )
+        {
+            return $result;
+        }
+
+        return false;
+    }
+
+    /**
+     * Get the status of the job with the given ID
+     *
+     * @param string $id id of the job to export
+     *
+     * @access     public
+     * @category   signature
+     *
+     * @return     object                      returns result set
+     */
+    public function GetJob($id)
+    {
+        $method = ucfirst(__FUNCTION__);
+
+        $parameter['id'] = $id;
+
+        $this->setSecureApiCall(true);
+
+        $result = $this->doSoapRequest(SERVICE_DATA, $method, $parameter);
+
+        if ( $result )
+        {
+            return $result;
+        }
+
+        return false;
+    }
+
 
 }
 
