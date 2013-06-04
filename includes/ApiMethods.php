@@ -458,6 +458,7 @@ abstract class ApiMethods
             $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
         }
 
+        var_dump($this->getWsdlUrl($service));
         $soap = new SoapClient($this->getWsdlUrl($service), $options);
 
         $params['connectId'] = $this->auth->getConnectId();
@@ -492,9 +493,10 @@ abstract class ApiMethods
         catch ( SoapFault $stacktrace )
         {
             $stacktrace   = "\n\n[STACKTRACE]\n" . $stacktrace;
-            $soapResponse = "\n\n[RESPONSE]\n" . $soap->__getLastResponse();
+            $soapRequest  = "\n\n[REQUEST]\n"    . $soap->__getLastRequest();
+            $soapResponse = "\n\n[RESPONSE]\n"   . $soap->__getLastResponse();
 
-            throw new ApiClientException($stacktrace . $soapResponse);
+            throw new ApiClientException($stacktrace . $soapRequest . $soapResponse);
         }
 
         return false;
@@ -557,7 +559,7 @@ abstract class ApiMethods
 
             if ( strlen($query) > 0 )
             {
-                $uri .= '?' . strtolower($query);
+                $uri .= '?' . $query;
             }
         }
 
@@ -706,18 +708,21 @@ abstract class ApiMethods
             $prefix = HTTP_PREFIX;
         }
 
-        if ( $service == SERVICE_PUBLISHER )
-        {
-            if ( $this->version )
-            {
-                return $prefix . HOST . URI_WSDL . '/' . $this->version;
-            }
+        switch($service) {
+          case SERVICE_PUBLISHER:
+              if ( $this->version )
+              {
+                  return $prefix . HOST . URI_WSDL . '/' . $this->version;
+              }
 
-            return $prefix . HOST . URI_WSDL;
-        }
-        else
-        {
-            return $prefix . OAUTH_HOST . URI_WSDL;
+              return $prefix . HOST . URI_WSDL;
+            break;
+          case SERVICE_CONNECT:
+              return $prefix . OAUTH_HOST . URI_WSDL;
+            break;
+          case SERVICE_DATA:
+              return $prefix . DATA_HOST . URI_WSDL;
+            break;
         }
     }
 
