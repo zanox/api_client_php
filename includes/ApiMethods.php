@@ -559,7 +559,7 @@ abstract class ApiMethods
 
             if ( strlen($query) > 0 )
             {
-                $uri .= '?' . strtolower($query);
+                $uri .= '?' . $query;
             }
         }
 
