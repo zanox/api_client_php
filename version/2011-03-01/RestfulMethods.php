@@ -2433,72 +2433,26 @@ class RestfulMethods extends ApiMethods implements IMethods
      */
     public function getTrackingCategories ( $adspaceId, $programId, $page = 0, $items = 50 )
     {
-        throw new ApiClientException("Restful API Interface doesn't
-            support getTrackingCategories()! Please use the SOAP Interface.");
+        /*
+        $resource = array('trackingcategories');
+
+        $parameter['adspaceId']    = $adspaceId;
+        $parameter['programId']    = $programId;
+        $parameter['page']         = $page;
+        $parameter['items']        = $items;
+
+        $this->setRestfulAction(GET);
+        $this->setSecureApiCall(true);
+
+        $result = $this->doRestfulRequest($resource, $parameter);
+
+        if ( $result )
+        {
+            return $result;
+        }
+			*/
+        return false;
     }
-
-
-    /**
-     * Create a report job with the asynchronous Data API
-     *
-     * @param string $reportType specifies kind or reportJob
-     * @param string $fromDate filter by date, lower range
-     * @param string $toDate filter by date, upper range
-     * @param string $dateType specifies meaning of fromDate and toDate.
-     * @param string $currency filter by the programs currency
-     * @param string $programId filter by the program
-     * @param string $adspaceId filter by the programs adspace
-     * @param string $admediumFormatId filter by AdmediumFormat
-     * @param string $groupBy group output by given fieldnames.
-     *
-     * @access     public
-     * @category   signature
-     *
-     * @return     object                      returns result set
-     */
-    public function CreateReportJob ($fromDate,$toDate,$dateType = null,$currency = null,$programId = null,$admediumId = null,$admediumFormatId = null,$adspaceId = null,$groupBy = null,$reportType = null,$notifyUrl = null)
-    {
-        throw new ApiClientException("Restful API Interface doesn't
-            support CreateReportJob()! Please use the SOAP Interface.");
-    }
-
-    /**
-     * Get a list of jobs
-     *
-     * @param string $type explanation
-     * @param string $status explanation
-     * @param string $createDate explanation
-     * @param string $page explanation
-     * @param string $items explanation
-     *
-     * @access     public
-     * @category   signature
-     *
-     * @return     object                      returns result set
-     */
-    public function GetJobs($type = null,$status = null,$createDate = null,$page = 0,$items = 10)
-    {
-        throw new ApiClientException("Restful API Interface doesn't
-            support GetJobs()! Please use the SOAP Interface.");
-    }
-
-    /**
-     * Get the status of the job with the given ID
-     *
-     * @param string $id id of the job to export
-     *
-     * @access     public
-     * @category   signature
-     *
-     * @return     object                      returns result set
-     */
-    public function GetJob($id)
-    {
-        throw new ApiClientException("Restful API Interface doesn't
-            support GetJob()! Please use the SOAP Interface.");
-    }
-
-
 
 }
 

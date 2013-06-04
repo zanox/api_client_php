@@ -1094,7 +1094,7 @@ interface IMethods
     public function getUiUrl ( $connectId, $sessionKey );
 
 
-    /**
+/**
      * Get tracking categories for ad space; if not program member, returns program's default categories
      *
      * @param      int         $adspaceId      adspace id (mandatory)
@@ -1109,56 +1109,7 @@ interface IMethods
      */
     public function getTrackingCategories ( $adspaceId, $programId, $page = 0, $items = 50 );
 
-    /**
-     * Create a report job with the asynchronous Data API
-     *
-     * @param string $fromDate filter by date, lower range
-     * @param string $toDate filter by date, upper range
-     * @param string $dateType specifies meaning of fromDate and toDate.
-     * @param string $currency filter by the programs currency
-     * @param string $programId filter by the program
-     * @param string $admediumId filter by admedium
-     * @param string $admediumFormatId filter by AdmediumFormat
-     * @param string $adspaceId filter by the programs adspace
-     * @param string $groupBy group output by given fieldnames.
-     * @param string $reportType specifies kind or reportJob
-     * @param string $notifyUrl explanation
-     *
-     *
-     * @access     public
-     * @category   signature
-     *
-     * @return     object                      returns result set
-     */
-    public function CreateReportJob ($fromDate,$toDate,$dateType = null,$currency = null,$programId = null,$admediumId = null,$admediumFormatId = null,$adspaceId = null,$groupBy = null,$reportType = null,$notifyUrl = null);
 
-    /**
-     * Get a list of jobs
-     *
-     * @param string $type explanation
-     * @param string $status explanation
-     * @param string $createDate explanation
-     * @param string $page explanation
-     * @param string $items explanation
-     *
-     * @access     public
-     * @category   signature
-     *
-     * @return     object                      returns result set
-     */
-    public function GetJobs($type = null,$status = null,$createDate = null,$page = 0,$items = 10);
-
-    /**
-     * Get the status of the job with the given ID
-     *
-     * @param string $id id of the job to export
-     *
-     * @access     public
-     * @category   signature
-     *
-     * @return     object                      returns result set
-     */
-    public function GetJob($id);
 
 }
 

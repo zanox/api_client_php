@@ -60,7 +60,6 @@ define("HTTP_PORT",                     80);
 define("HTTPS_PORT",                    443);
 define("HOST",                          "api.zanox.com");
 define("OAUTH_HOST",                    "auth.zanox.com");
-define("DATA_HOST",                     "data.zanox.com");
 define("URI_WSDL",                      "/wsdl");
 define("URI_SOAP",                      "/soap");
 define("URI_XML",                       "/xml");
@@ -78,7 +77,6 @@ define("USERAGENT",                     "zxPhp ApiClient");
  */
 define("SERVICE_PUBLISHER",             "publisherservice");
 define("SERVICE_CONNECT",               "connectservice");
-define("SERVICE_DATA",                  "dataservice");
 
 
 /**

@@ -458,7 +458,6 @@ abstract class ApiMethods
             $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
         }
 
-        var_dump($this->getWsdlUrl($service));
         $soap = new SoapClient($this->getWsdlUrl($service), $options);
 
         $params['connectId'] = $this->auth->getConnectId();
@@ -493,10 +492,9 @@ abstract class ApiMethods
         catch ( SoapFault $stacktrace )
         {
             $stacktrace   = "\n\n[STACKTRACE]\n" . $stacktrace;
-            $soapRequest  = "\n\n[REQUEST]\n"    . $soap->__getLastRequest();
-            $soapResponse = "\n\n[RESPONSE]\n"   . $soap->__getLastResponse();
+            $soapResponse = "\n\n[RESPONSE]\n" . $soap->__getLastResponse();
 
-            throw new ApiClientException($stacktrace . $soapRequest . $soapResponse);
+            throw new ApiClientException($stacktrace . $soapResponse);
         }
 
         return false;
@@ -559,7 +557,7 @@ abstract class ApiMethods
 
             if ( strlen($query) > 0 )
             {
-                $uri .= '?' . $query;
+                $uri .= '?' . strtolower($query);
             }
         }
 
@@ -640,6 +638,7 @@ abstract class ApiMethods
 
         do
         {
+            if (feof($fp)) break;
             $responseHeader .= fread($fp, 1);
         }
         while (!preg_match('/\\r\\n\\r\\n$/', $responseHeader));
@@ -707,21 +706,18 @@ abstract class ApiMethods
             $prefix = HTTP_PREFIX;
         }
 
-        switch($service) {
-          case SERVICE_PUBLISHER:
-              if ( $this->version )
-              {
-                  return $prefix . HOST . URI_WSDL . '/' . $this->version;
-              }
+        if ( $service == SERVICE_PUBLISHER )
+        {
+            if ( $this->version )
+            {
+                return $prefix . HOST . URI_WSDL . '/' . $this->version;
+            }
 
-              return $prefix . HOST . URI_WSDL;
-            break;
-          case SERVICE_CONNECT:
-              return $prefix . OAUTH_HOST . URI_WSDL;
-            break;
-          case SERVICE_DATA:
-              return $prefix . DATA_HOST . URI_WSDL;
-            break;
+            return $prefix . HOST . URI_WSDL;
+        }
+        else
+        {
+            return $prefix . OAUTH_HOST . URI_WSDL;
         }
     }
 
