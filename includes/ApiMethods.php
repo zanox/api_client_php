@@ -458,7 +458,6 @@ abstract class ApiMethods
             $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
         }
 
-        var_dump($this->getWsdlUrl($service));
         $soap = new SoapClient($this->getWsdlUrl($service), $options);
 
         $params['connectId'] = $this->auth->getConnectId();
