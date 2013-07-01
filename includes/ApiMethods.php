@@ -639,6 +639,7 @@ abstract class ApiMethods
 
         do
         {
+            if (feof($fp)) break;
             $responseHeader .= fread($fp, 1);
         }
         while (!preg_match('/\\r\\n\\r\\n$/', $responseHeader));
