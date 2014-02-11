@@ -1783,8 +1783,8 @@ class RestfulMethods extends ApiMethods implements IMethods
     {
         $resource = array('reports', 'basic');
 
-        $parameter['fromDate']       = $fromDate;
-        $parameter['toDate']         = $toDate;
+        $parameter['fromdate']       = $fromDate;
+        $parameter['todate']         = $toDate;
         $parameter['dateType']       = $dateType;
         $parameter['currency']       = $currency;
         $parameter['program']        = $programId;
