@@ -1745,6 +1745,30 @@ class RestfulMethods extends ApiMethods implements IMethods
 
         return false;
     }
+    
+    	/**
+	 * Return sale basket.
+	 * 
+	 * @param      string         $saleId         sale id
+	 * 
+	 * @access     public
+	 * @category   signature
+	 * @return     object or string            profile item
+	 */
+	public function getSaleBasket($saleId) {
+		$resource = array('reports','sales', 'sale', $saleId, 'basket');
+
+		$this->setRestfulAction(GET);
+		$this->setSecureApiCall(true);
+
+		$result = $this->doRestfulRequest($resource);
+
+		if($result) {
+			return $result;
+		}
+
+		return false;
+	}
 
 
 
