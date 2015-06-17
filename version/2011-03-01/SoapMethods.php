@@ -2011,7 +2011,7 @@ class SoapMethods extends ApiMethods implements IMethods
     {
         $method = ucfirst(__FUNCTION__);
 
-        $parameter['fromDate']    = $programId;
+        $parameter['programId']    = $programId;
         $parameter['adspaceId']   = $adspaceId;
         $parameter['reviewState'] = $reviewState;
         $parameter['date']        = $date;
@@ -2100,7 +2100,7 @@ class SoapMethods extends ApiMethods implements IMethods
     {
         $method = ucfirst(__FUNCTION__);
 
-        $parameter['fromDate']    = $programId;
+        $parameter['programId']    = $programId;
         $parameter['adspaceId']   = $adspaceId;
         $parameter['reviewState'] = $reviewState;
         $parameter['date']        = $date;
