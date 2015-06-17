@@ -1679,7 +1679,7 @@ class RestfulMethods extends ApiMethods implements IMethods
     {
         $resource = array('reports', 'sales', 'date', $date);
 
-        $parameter['dateType'] = $dateType;
+        $parameter['datetype'] = $dateType;
         $parameter['program']  = $programId;
         $parameter['adspace']  = $adspaceId;
         $parameter['state']    = $reviewState;
@@ -1726,7 +1726,7 @@ class RestfulMethods extends ApiMethods implements IMethods
     {
         $resource = array('reports', 'leads', 'date', $date);
 
-        $parameter['dateType'] = $dateType;
+        $parameter['datetype'] = $dateType;
         $parameter['program']  = $programId;
         $parameter['adspace']  = $adspaceId;
         $parameter['state']    = $reviewState;
