@@ -118,6 +118,8 @@ class RestfulMethods extends ApiMethods implements IMethods
      * @param      float       $maxPrice       maximum price (optional)
      * @param      int         $adspaceId      adspace id (optional)
      * @param      int         $page           page of result set (optional)
+     * @param      int         $ean            ean (optional)
+     * @param      string      $partnership    confirmed or all programs (optional)
      * @param      int         $items          items per page (optional)
      *
      * @access     public
@@ -128,7 +130,7 @@ class RestfulMethods extends ApiMethods implements IMethods
     public function searchProducts ( $query, $searchType = 'phrase',
         $region = NULL, $categoryId = NULL, $programs = array(),
         $hasImages = true, $minPrice = 0, $maxPrice = NULL, $adspaceId = NULL,
-        $page = 0, $items = 10 )
+        $page = 0, $items = 10, $partnership = NULL, $ean = NULL )
     {
         $resource = array('products');
 
@@ -141,6 +143,8 @@ class RestfulMethods extends ApiMethods implements IMethods
         $parameter['minPrice']   = $minPrice;
         $parameter['maxPrice']   = $maxPrice;
         $parameter['adspace']    = $adspaceId;
+        $parameter['partnership']= $partnership;
+        $parameter['ean']        = $ean;
         $parameter['page']       = $page;
         $parameter['items']      = $items;
 
