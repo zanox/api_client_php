@@ -118,6 +118,8 @@ class RestfulMethods extends ApiMethods implements IMethods
      * @param      float       $maxPrice       maximum price (optional)
      * @param      int         $adspaceId      adspace id (optional)
      * @param      int         $page           page of result set (optional)
+     * @param      int         $ean            ean (optional)
+     * @param      string      $partnership    confirmed or all programs (optional)
      * @param      int         $items          items per page (optional)
      *
      * @access     public
