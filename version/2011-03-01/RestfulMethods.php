@@ -2419,17 +2419,15 @@ class RestfulMethods extends ApiMethods implements IMethods
 
     /**
      * Get tracking categories and commissions assigned to you
-     * Returns default or the individual commission models assigned by the advertiser to the specified AdSpace
      *
      * @param      int         $adspaceId      adspace id (mandatory)
-     * @param      int         $programId      advertiser program id (mandatory)     
-     * @param      int         $page           result set page (optional)
-     * @param      int         $items          items per page (optional)
+     * @param      int         $programId      advertiser program id (mandatory)  
      *
      * @access     public
      * @category   signature
      *
-     * @return     object or string            program result set of trackingCategoryItems
+     * @return     object or string            program result set of default or the individual commission 
+     *                                         models assigned by the advertiser to the specified AdSpace
      */
     public function getTrackingCategories ( $adspaceId, $programId )
     {
@@ -2445,7 +2443,6 @@ class RestfulMethods extends ApiMethods implements IMethods
             return $result;
         }
             
-        return false;
         return false;
     }
 
