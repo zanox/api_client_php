@@ -2418,8 +2418,8 @@ class RestfulMethods extends ApiMethods implements IMethods
 
 
     /**
-     * Get tracking categories for ad space; if not program member, returns program's default categories
-     * NOTE: not yet implemented with REST protocol!!!!
+     * Get tracking categories and commissions assigned to you
+     * Returns default or the individual commission models assigned by the advertiser to the specified AdSpace
      *
      * @param      int         $adspaceId      adspace id (mandatory)
      * @param      int         $programId      advertiser program id (mandatory)     
@@ -2431,26 +2431,21 @@ class RestfulMethods extends ApiMethods implements IMethods
      *
      * @return     object or string            program result set of trackingCategoryItems
      */
-    public function getTrackingCategories ( $adspaceId, $programId, $page = 0, $items = 50 )
+    public function getTrackingCategories ( $adspaceId, $programId )
     {
-        /*
-        $resource = array('trackingcategories');
-
-        $parameter['adspaceId']    = $adspaceId;
-        $parameter['programId']    = $programId;
-        $parameter['page']         = $page;
-        $parameter['items']        = $items;
+        $resource = array('programapplications','program',$programId,'adspace', $adspaceId, 'trackingcategories');
 
         $this->setRestfulAction(GET);
         $this->setSecureApiCall(true);
 
-        $result = $this->doRestfulRequest($resource, $parameter);
+        $result = $this->doRestfulRequest($resource);
 
         if ( $result )
         {
             return $result;
         }
-			*/
+            
+        return false;
         return false;
     }
 
