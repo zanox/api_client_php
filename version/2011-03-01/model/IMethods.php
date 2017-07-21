@@ -1094,20 +1094,19 @@ interface IMethods
     public function getUiUrl ( $connectId, $sessionKey );
 
 
-/**
-     * Get tracking categories for ad space; if not program member, returns program's default categories
+    /**
+     * Get tracking categories and commissions assigned to you
      *
      * @param      int         $adspaceId      adspace id (mandatory)
-     * @param      int         $programId      advertiser program id (mandatory)     
-     * @param      int         $page           result set page (optional)
-     * @param      int         $items          items per page (optional)
+     * @param      int         $programId      advertiser program id (mandatory)  
      *
      * @access     public
      * @category   signature
      *
-     * @return     object or string            program result set of trackingCategoryItems
+     * @return     object or string            program result set of default or the individual commission 
+     *                                         models assigned by the advertiser to the specified AdSpace
      */
-    public function getTrackingCategories ( $adspaceId, $programId, $page = 0, $items = 50 );
+    public function getTrackingCategories ( $adspaceId, $programId );
 
 
 
